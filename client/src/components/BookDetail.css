@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
+.book-detail {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 25px;
+    background: rgba(255, 245, 230, 0.95); 
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'Mountains of Christmas';
+    text-align: center;
+}
+
+/* Book Title */
+.book-detail h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #5a3e2b;
+    position: relative;
+}
+
+.book-detail h1::after {
+    content: " 📖"; 
+    font-size: 22px;
+}
+
+/* Section Headers */
+.book-detail h2 {
+    text-align: left;
+    color: #5a3e2b;
+    font-size: 24px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.book-detail h2::after {
+    content: " 📜"; 
+    font-size: 20px;
+}
+
+/* Book Details List */
+.book-detail ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.book-detail li {
+    margin: 12px 0;
+    padding: 15px;
+    background: rgba(255, 250, 240, 0.9); 
+    border-left: 4px solid #b08a5c; 
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-align: left;
+    font-size: 16px;
+    color: #3e2723;
+}
+
+/* Hover Effect */
+.book-detail li:hover {
+    background: rgba(250, 225, 190, 0.9);
+    transform: scale(1.02);
+}
+
+/* Loading & Error Messages */
+.loading, .error {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: #8d6e63;
+}

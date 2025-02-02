@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
+.review-list-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    background: rgba(255, 245, 230, 0.95); 
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.review-list-title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: left;
+    color: #5a3e2b;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.review-list-title::after {
+    content: " ✒️"; /* Adds a quill icon */
+    font-size: 20px;
+}
+
+/* List Styling */
+.review-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.review-list li {
+    margin: 12px 0;
+    padding: 15px;
+    background: rgba(255, 250, 240, 0.9); /* Aged parchment effect */
+    border-left: 4px solid #5a3e2b; /* Old book border */
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effect for magical touch */
+.review-list li:hover {
+    background: rgba(250, 225, 190, 0.9); /* Warmer parchment */
+    transform: scale(1.02);
+}
+
+/* Review Text */
+.review-list p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-style: italic;
+    color: #3e2723;
+}
+
+.review-form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background: rgba(255, 245, 230, 0.95); /* Soft parchment feel */
+    border-radius: 12px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
+    font-family: 'Mountains of Christmas';
+}
+
+/* Title */
+.review-form h2 {
+    color: #5a3e2b;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.review-form h2::after {
+    content: " 📝"; /* Quill and scroll effect */
+    font-size: 20px;
+}
+
+/* Form Fields */
+.review-form div {
+    margin-bottom: 15px;
+}
+
+.review-form label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #3e2723;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 90%;
+    padding: 10px;
+    border: 2px solid #b08a5c; /* Aged book border */
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Button */
+.review-form button {
+    background-color: #5a3e2b;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.review-form button:hover {
+    background-color: #8d6e63;
+}
+
+/* Disabled Button */
+.review-form button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

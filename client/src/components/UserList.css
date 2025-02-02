@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap');
+
+/* General Styles */
+body {
+    background: url('../Assets/Images/image12.png') repeat, 
+                linear-gradient(to bottom, #f3efe0, #dfd2b8);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Mountains of Christmas';
+    color: #3e2723;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+/* Main Container */
+.user-list-container {
+    max-width: 800px;
+    margin: 100px auto 20px;
+    padding: 20px;
+    background: rgba(255, 245, 230, 0.95);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    color: #3e2723;
+}
+
+/* Title Styling */
+.user-list-container h1 {
+    font-size: 28px;
+    text-align: left;
+    font-weight: bold;
+    position: relative;
+    padding-left: 10px;
+}
+.feather-icon {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* User List */
+.user-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    color: #3e2723;
+}
+
+.user-list li {
+    font-size: 18px;
+    margin: 8px 0;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.user-list li:hover {
+    background-color: rgba(186, 151, 101, 0.2);
+    padding-left: 15px;
+    border-left: 4px solid #5a3e2b;
+}
+
+/* Form Section */
+.user-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Input Field */
+.user-form input {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #b08a5c;
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* Button */
+.user-form button {
+    background-color: #5a3e2b;
+    color: white;
+    font-size: 16px;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 20px;
+}
+
+.user-form button:hover {
+    background-color: #8d6e63
+}

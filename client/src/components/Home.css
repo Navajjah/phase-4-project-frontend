@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+    box-sizing: border-box;
+}
+.container {
+    min-height: 100vh;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: white;
+}
+  
+.background-image {
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: cover;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    display: block;
+    left: 0;
+    z-index: -1;  
+}
+  
+  
