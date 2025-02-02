@@ -19,10 +19,10 @@
     padding-bottom: 10px;
 }
 
-.review-list-title::after {
-    content: " ✒️"; /* Adds a quill icon */
+/* .review-list-title::after {
+    content: " ✒️"; 
     font-size: 20px;
-}
+} */
 
 /* List Styling */
 .review-list {
@@ -33,8 +33,8 @@
 .review-list li {
     margin: 12px 0;
     padding: 15px;
-    background: rgba(255, 250, 240, 0.9); /* Aged parchment effect */
-    border-left: 4px solid #5a3e2b; /* Old book border */
+    background: rgba(255, 250, 240, 0.9); 
+    border-left: 4px solid #5a3e2b; 
     border-radius: 6px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, background 0.3s ease;
@@ -42,7 +42,7 @@
 
 /* Hover effect for magical touch */
 .review-list li:hover {
-    background: rgba(250, 225, 190, 0.9); /* Warmer parchment */
+    background: rgba(250, 225, 190, 0.9); 
     transform: scale(1.02);
 }
 
@@ -58,7 +58,7 @@
     max-width: 600px;
     margin: 40px auto;
     padding: 25px;
-    background: rgba(255, 245, 230, 0.95); /* Soft parchment feel */
+    background: rgba(255, 245, 230, 0.95);
     border-radius: 12px;
     box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
     font-family: 'Mountains of Christmas';
@@ -74,7 +74,7 @@
 }
 
 .review-form h2::after {
-    content: " 📝"; /* Quill and scroll effect */
+    content: " 📝"; 
     font-size: 20px;
 }
 
@@ -95,7 +95,7 @@
 .review-form textarea {
     width: 90%;
     padding: 10px;
-    border: 2px solid #b08a5c; /* Aged book border */
+    border: 2px solid #b08a5c; 
     border-radius: 6px;
     font-size: 16px;
     background: rgba(255, 255, 255, 0.9);
@@ -110,7 +110,7 @@
     padding: 10px 15px;
     border-radius: 6px;
     cursor: pointer;
-    width: 100%;
+    width: 90%;
     transition: background 0.3s ease;
 }
 

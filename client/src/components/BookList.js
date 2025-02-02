@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import './BookList.css';
-import NewBookForm from './NewBookForm';
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import './BookList.css'
+import NewBookForm from './NewBookForm'
 
 function BookList() {
-    const [books, setBooks] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [books, setBooks] = useState([])
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
     useEffect(() => {
-        setLoading(true);
+        setLoading(true)
         fetch('https://phase-4-project-backend-q0g2.onrender.com/books')
             .then(resp => {
                 if (!resp.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Network response was not ok')
                 }
-                return resp.json();
+                return resp.json()
             })
             .then(data => {
-                setBooks(data);
-                setLoading(false);
+                setBooks(data)
+                setLoading(false)
             })
             .catch(err => {
-                setError(err.message);
-                setLoading(false);
-            });
-    }, []);
+                setError(err.message)
+                setLoading(false)
+            })
+    }, [])
 
     return (
         <div className='book-list-container'>
@@ -41,7 +41,7 @@ function BookList() {
             </ul>
             <NewBookForm />
         </div>
-    );
+    )
 }
 
-export default BookList;
+export default BookList

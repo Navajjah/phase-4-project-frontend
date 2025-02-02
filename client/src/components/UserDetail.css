@@ -51,6 +51,9 @@
 .delete-btn {
     margin-right: 25px;
 }
+.edit-btn {
+    margin-right: 10px;
+}
 
 /* Favorites Section */
 .user-display h2 {

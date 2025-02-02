@@ -59,21 +59,21 @@ function UserDetail() {
     }
   }
 
-  const handleAddFavorite = async (bookId) => {
-    try {
-      const response = await fetch(`https://phase-4-project-backend-q0g2.onrender.com/users/${id}/favorites/${bookId}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ book_id: bookId }),
-      })
-      if (!response.ok) {
-        throw new Error('Failed to add favorite')
-      }
-      await fetchUserData()
-    } catch (error) {
-      setError(error.message)
-    }
-  }
+  // const handleAddFavorite = async (bookId) => {
+  //   try {
+  //     const response = await fetch(`https://phase-4-project-backend-q0g2.onrender.com/users/${id}/favorites/${bookId}`, {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({ book_id: bookId }),
+  //     })
+  //     if (!response.ok) {
+  //       throw new Error('Failed to add favorite')
+  //     }
+  //     await fetchUserData()
+  //   } catch (error) {
+  //     setError(error.message)
+  //   }
+  // }
 
   const handleRemoveFavorite = async (bookId) => {
     try {
@@ -125,11 +125,11 @@ function UserDetail() {
         <p>No favorite books found.</p>
       )}
 
-      <div className="add-favorite-section">
+      {/* <div className="add-favorite-section">
         <h3>📚 Add a Favorite Book</h3>
         <input type="text" placeholder="Enter Book ID" id="add-favorite-book-id" />
         <button onClick={() => handleAddFavorite(document.getElementById('add-favorite-book-id').value)}>➕ Add</button>
-      </div>
+      </div> */}
     </div>
   )
 }

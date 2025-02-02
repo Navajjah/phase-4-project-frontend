@@ -3,12 +3,12 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
 const ReviewDetail = ({ review, onDelete, onUpdate }) => {
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(false)
 
   const validationSchema = Yup.object({
     content: Yup.string().required('Content is required'),
     rating: Yup.number().required('Rating is required').min(1).max(5),
-  });
+  })
 
   const handleDelete = () => {
     fetch(`https://phase-4-project-backend-q0g2.onrender.com/reviews/${review.id}`, {
@@ -16,8 +16,8 @@ const ReviewDetail = ({ review, onDelete, onUpdate }) => {
     })
       .then(response => response.json())
       .then(() => onDelete(review.id))
-      .catch(error => console.error('Error:', error));
-  };
+      .catch(error => console.error('Error:', error))
+  }
 
   const handleUpdate = (values, { setSubmitting }) => {
     fetch(`https://phase-4-project-backend-q0g2.onrender.com/reviews/${review.id}`, {
@@ -27,15 +27,15 @@ const ReviewDetail = ({ review, onDelete, onUpdate }) => {
     })
       .then(response => response.json())
       .then(data => {
-        onUpdate(data);  
-        setIsEditing(false);
-        setSubmitting(false);
+        onUpdate(data)  
+        setIsEditing(false)
+        setSubmitting(false)
       })
       .catch(error => {
-        console.error('Error:', error);
-        setSubmitting(false);
-      });
-  };
+        console.error('Error:', error)
+        setSubmitting(false)
+      })
+  }
 
   return (
     <div className="review-detail">
@@ -70,7 +70,7 @@ const ReviewDetail = ({ review, onDelete, onUpdate }) => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ReviewDetail;
+export default ReviewDetail
