@@ -27,6 +27,10 @@ function BookList() {
             })
     }, [])
 
+    const addBook = (newBook) => {
+        setBooks(prevBooks => [...prevBooks, newBook]);
+    }
+
     return (
         <div className='book-list-container'>
             <h1>Books</h1>
@@ -39,7 +43,7 @@ function BookList() {
                     </li>
                 ))}
             </ul>
-            <NewBookForm />
+            <NewBookForm addBook={addBook} />
         </div>
     )
 }

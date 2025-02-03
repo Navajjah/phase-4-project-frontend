@@ -3,7 +3,6 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
 
-
 async function submitReview(review) {
     try {
         const response = await fetch('https://phase-4-project-backend-q0g2.onrender.com/reviews', {
@@ -12,14 +11,14 @@ async function submitReview(review) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(review)
-        });
+        })
 
         if (!response.ok) {
-            const errorData = await response.json();
-            console.error('Error submitting review:', errorData.message);
+            const errorData = await response.json()
+            console.error('Error submitting review:', errorData.message)
         } else {
             const data = await response.json();
-            console.log('Review submitted successfully:', data);
+            console.log('Review submitted successfully:', data)
         }
     } catch (error) {
         console.error('Network error:', error);
@@ -51,7 +50,7 @@ const NewReviewForm = ({ reviewToEdit, onReviewSubmit }) => {
                     resetForm()
                 } catch (error) {
                     console.error('Error submitting review:', error)
-                    setStatus({ success: false, message: 'Submission failed' })
+                    setStatus({ success: false, message: 'Submission failed' });
                 } finally {
                     setSubmitting(false)
                 }

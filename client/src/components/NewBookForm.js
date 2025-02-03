@@ -2,8 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
-
-const NewBookForm = () => {
+const NewBookForm = ({ addBook }) => {
   const validationSchema = Yup.object({
     title: Yup.string().required('Title is required'),
     rarity: Yup.string().required('Rarity is required'),
@@ -28,6 +27,7 @@ const NewBookForm = () => {
       })
       .then(data => {
         console.log('Book added:', data);
+        addBook(data); // Call addBook with the new book data
         setSubmitting(false);
         resetForm();
         setStatus({ success: 'Book added successfully!' })

@@ -1,4 +1,3 @@
-// src/components/ReviewList.js
 import React, { useEffect, useState } from 'react'
 import ReviewDetail from './ReviewDetail'
 import NewReviewForm from './NewReviewForm'
