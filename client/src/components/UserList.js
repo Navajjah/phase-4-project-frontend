@@ -4,7 +4,6 @@ import './UserList.css'
 import NewUserForm from './NewUserForm'
 import feather from '../Assets/icons/quill-drawing-a-line.png'
 
-
 function UserList() {
     const [users, setUsers] = useState([])
     const [loading, setLoading] = useState(true)
@@ -31,6 +30,10 @@ function UserList() {
             });
     }, []);
 
+    const addUser = (newUser) => {
+        setUsers(prevUsers => [...prevUsers, newUser]); 
+    }
+
     return (
         <div className='user-list-container'>
             <h1>Hogwarts Students <img src={feather} alt="Feather Icon" className='feather-icon'/></h1>
@@ -43,7 +46,7 @@ function UserList() {
                     </li>
                 ))}
             </ul>
-            <NewUserForm />
+            <NewUserForm addUser={addUser} /> 
         </div>
     )
 }

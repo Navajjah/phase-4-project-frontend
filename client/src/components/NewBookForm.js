@@ -9,7 +9,7 @@ const NewBookForm = ({ addBook }) => {
     spell_type: Yup.string().required('Spell Type is required'),
     author: Yup.string().required('Author is required'),
     hogwarts_class: Yup.string().required('Hogwarts Class is required'),
-  });
+  })
 
   const handleSubmit = (values, { setSubmitting, resetForm, setStatus }) => {
     fetch('https://phase-4-project-backend-q0g2.onrender.com/books', {
@@ -23,19 +23,19 @@ const NewBookForm = ({ addBook }) => {
             throw new Error(errorData.message || 'Something went wrong')
           })
         }
-        return resp.json();
+        return resp.json()
       })
       .then(data => {
-        console.log('Book added:', data);
-        addBook(data); // Call addBook with the new book data
-        setSubmitting(false);
-        resetForm();
+        console.log('Book added:', data)
+        addBook(data) 
+        setSubmitting(false)
+        resetForm()
         setStatus({ success: 'Book added successfully!' })
       })
       .catch(error => {
         console.error('Error adding book:', error)
-        setSubmitting(false);
-        setStatus({ error: error.message });
+        setSubmitting(false)
+        setStatus({ error: error.message })
       })
   }
 

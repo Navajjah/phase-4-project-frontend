@@ -21,6 +21,10 @@ function ReviewList() {
     setReviews(reviews.map(review => review.id === updatedReview.id ? updatedReview : review))
   }
 
+  const addReview = (newReview) => {
+    setReviews(prevReviews => [...prevReviews, newReview]); 
+  }
+
   return (
     <div className='review-list-container'>
       <h1>Reviews</h1>
@@ -35,7 +39,7 @@ function ReviewList() {
           </li>
         ))}
       </ul>
-      <NewReviewForm />
+      <NewReviewForm addReview={addReview} />
     </div>
   )
 }

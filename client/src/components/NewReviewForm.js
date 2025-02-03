@@ -2,7 +2,6 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
-
 async function submitReview(review) {
     try {
         const response = await fetch('https://phase-4-project-backend-q0g2.onrender.com/reviews', {
@@ -17,21 +16,22 @@ async function submitReview(review) {
             const errorData = await response.json()
             console.error('Error submitting review:', errorData.message)
         } else {
-            const data = await response.json();
+            const data = await response.json()
             console.log('Review submitted successfully:', data)
+            return data // Return the data for use in addReview
         }
     } catch (error) {
-        console.error('Network error:', error);
+        console.error('Network error:', error)
     }
 }
 
-const NewReviewForm = ({ reviewToEdit, onReviewSubmit }) => {
+const NewReviewForm = ({ reviewToEdit, addReview }) => {
     const validationSchema = Yup.object({
         content: Yup.string().required('Content is required'),
         rating: Yup.number().required('Rating is required').min(1).max(5),
         book_id: Yup.number().required('Book ID is required'),
         user_id: Yup.number().required('User ID is required'),
-    });
+    })
 
     return (
         <Formik
@@ -45,12 +45,13 @@ const NewReviewForm = ({ reviewToEdit, onReviewSubmit }) => {
             onSubmit={async (values, { setSubmitting, setStatus, resetForm }) => {
                 try {
                     console.log('Submitting review:', values)
-                    await submitReview(values)
+                    const data = await submitReview(values) 
+                    addReview(data)
                     setStatus({ success: true })
                     resetForm()
                 } catch (error) {
                     console.error('Error submitting review:', error)
-                    setStatus({ success: false, message: 'Submission failed' });
+                    setStatus({ success: false, message: 'Submission failed' })
                 } finally {
                     setSubmitting(false)
                 }

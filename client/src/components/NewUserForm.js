@@ -2,12 +2,11 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 
-
 const validationSchema = Yup.object({
   username: Yup.string().required('Username is required'),
 });
 
-const NewUserForm = () => {
+const NewUserForm = ({ addUser }) => { 
   
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
@@ -19,13 +18,14 @@ const NewUserForm = () => {
 
       const data = await response.json()
       console.log('User added:', data)
-      setSubmitting(false);
-      resetForm();
+      addUser(data)
+      setSubmitting(false)
+      resetForm()
     } catch (error) {
-      console.error('Error adding user:', error)
-      setSubmitting(false);
+      console.error('Error adding user:', error);
+      setSubmitting(false)
     }
-  };
+  }
 
   return (
     <Formik
